@@ -1,0 +1,12 @@
+services:
+  nginx:
+    image: ghcr.io/marvinisaac/nginx-api/nginx-api:latest
+    ports: 
+      - 80:80
+    links:
+      - php
+
+  php:
+    image: php:7.4-fpm-alpine
+    volumes:
+      - ./:/var/www/html
